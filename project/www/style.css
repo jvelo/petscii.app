@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'C64_Pro_Mono';
+    src: url('fonts/C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.eot') format('embedded-opentype'),
+    url('fonts/C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.woff') format('woff'),
+    url('fonts/C64_TrueType_v1.2-STYLE/C64_Pro_Mono-STYLE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* hide scrollbars */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body, main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: C64_Pro_Mono;
+}
+
+
+main > div {
+    height: 100%;
+}
+
+.editor {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.charset {
+    width: 300px;
+}
+
+.charset, .scene {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+
+.charset .char,
+.scene .char {
+    display: inline;
+    max-height: 16px;
+}
+
+.charset .char.selected {
+    background-color: black;
+    color: white;
+}
+
+.scene {
+    width: 300px;
+}
+
+.scene .char {
+    background-color: #000066;
+    color: white;
+}

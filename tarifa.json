@@ -1,0 +1,118 @@
+{
+  "name": "Petscii",
+  "id": "cool.naze.petscii",
+  "description": "",
+  "version": "0.0.0",
+  "platforms": [
+    "ios@3.8.0",
+    "android@3.7.1",
+    "browser@3.6.0"
+  ],
+  "configurations": {
+    "ios": {
+      "default": {
+        "id": "cool.naze.petscii.init",
+        "product_name": "Petscii_init",
+        "product_file_name": "Petscii_init"
+      },
+      "dev": {
+        "id": "cool.naze.petscii.dev",
+        "product_name": "Petscii_dev",
+        "product_file_name": "Petscii_dev"
+      },
+      "stage": {
+        "id": "cool.naze.petscii.stage",
+        "product_name": "Petscii_stage",
+        "product_file_name": "Petscii_stage",
+        "release": true
+      },
+      "prod": {
+        "id": "cool.naze.petscii.prod",
+        "product_name": "Petscii_prod",
+        "product_file_name": "Petscii_prod",
+        "release": true
+      }
+    },
+    "android": {
+      "default": {
+        "id": "cool.naze.petscii.init",
+        "product_name": "Petscii_init",
+        "product_file_name": "Petscii_init"
+      },
+      "dev": {
+        "id": "cool.naze.petscii.dev",
+        "product_name": "Petscii_dev",
+        "product_file_name": "Petscii_dev"
+      },
+      "stage": {
+        "id": "cool.naze.petscii.stage",
+        "product_name": "Petscii_stage",
+        "product_file_name": "Petscii_stage",
+        "release": true
+      },
+      "prod": {
+        "id": "cool.naze.petscii.prod",
+        "product_name": "Petscii_prod",
+        "product_file_name": "Petscii_prod",
+        "release": true
+      }
+    },
+    "browser": {
+      "default": {
+        "id": "cool.naze.petscii.init",
+        "product_name": "Petscii_init",
+        "product_file_name": "Petscii_init"
+      },
+      "dev": {
+        "id": "cool.naze.petscii.dev",
+        "product_name": "Petscii_dev",
+        "product_file_name": "Petscii_dev"
+      },
+      "stage": {
+        "id": "cool.naze.petscii.stage",
+        "product_name": "Petscii_stage",
+        "product_file_name": "Petscii_stage",
+        "release": true
+      },
+      "prod": {
+        "id": "cool.naze.petscii.prod",
+        "product_name": "Petscii_prod",
+        "product_file_name": "Petscii_prod",
+        "release": true
+      }
+    }
+  },
+  "cordova": {
+    "preferences": {
+      "DisallowOverscroll": true,
+      "EnableViewportScale": false,
+      "KeyboardDisplayRequiresUserAction": false,
+      "ShowSplashScreenSpinner": false,
+      "SplashScreen": "screen",
+      "BackgroundColor": "0xffffffff",
+      "AutoHideSplashScreen": false,
+      "KeepRunning": true
+    },
+    "accessOrigin": [
+      "*",
+      {
+        "origin": "tel:",
+        "external": true
+      }
+    ]
+  },
+  "author": {
+    "name": "Jérôme Velociter",
+    "email": "jerome@naze.cool",
+    "href": "http://naze.cool"
+  },
+  "check": {
+    "ios": "./project/bin/check_ios.js",
+    "android": "./project/bin/check_android.js",
+    "browser": "./project/bin/check_browser.js"
+  },
+  "plugins": {
+    "org.apache.cordova.splashscreen": "https://github.com/apache/cordova-plugin-splashscreen.git#r1.0.0",
+    "org.apache.cordova.device-orientation": "https://github.com/apache/cordova-plugin-device-orientation.git#r0.3.11"
+  }
+}
