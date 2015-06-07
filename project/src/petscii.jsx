@@ -1,7 +1,7 @@
 require('es5-shim');
 require('es6-shim');
 
-var React = require('react');
+var React = require('react/addons');
 var Router = require('react-router');
 
 var App = require('./App');

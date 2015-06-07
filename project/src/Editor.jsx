@@ -7,10 +7,11 @@ import Scene from './Scene';
 class Editor extends React.Component {
 
     constructor(props) {
+        super(props);
+
         let nbsp = String.fromCharCode(160),
             emptyDrawing = Array.apply(null, {length: 128}).map(entry => nbsp);
 
-        super(props);
         this.state = {
             activeChar: undefined,
             drawing: emptyDrawing
@@ -21,7 +22,6 @@ class Editor extends React.Component {
         this.setState({
             activeChar: char
         });
-        console.log("Active char", this.state.activeChar);
     }
 
     onCharDrawn(position) {

@@ -88,6 +88,11 @@ main > div {
     color: white;
 }
 
+.charset .char.hover {
+    background: red;
+    transform: scale(2);
+}
+
 .scene {
     width: 300px;
 }

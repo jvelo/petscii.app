@@ -6,25 +6,14 @@ class Char extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        let node = React.findDOMNode(this.refs.char);
-
-        this.onTouchStartListener = this.onTouchStart.bind(this);
-        node.addEventListener("touchstart", this.onTouchStartListener);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('touchstart', this.onTouchStartListener);
-    }
-
-    onTouchStart() {
-        this.props.onCharSelected(this.props.children);
-    }
-
     render() {
-
+        var classNames = React.addons.classSet({
+            'char': true,
+            'selected': this.props.activeChar === this.props.children,
+            'hover' : this.props.hoveredChar === this.props.children
+        });
         return (
-            <div ref="char" className={'char ' + (this.props.activeChar === this.props.children ? 'selected' : '' )}>
+            <div data-char={this.props.children} className={classNames}>
                 {this.props.children}
             </div>
         )
