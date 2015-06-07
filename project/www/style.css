@@ -62,19 +62,24 @@ main > div {
     height: 100%;
     display: -webkit-flex;
     display: flex;
+    padding: 10px;
 }
 
 .charset {
     width: 300px;
 }
 
-.charset, .scene {
+.charset {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-align-content: flex-start;
     align-content: flex-start;
+}
+
+.scene .row {
+    max-height: 16px;
 }
 
 .charset .char,

@@ -6,25 +6,12 @@ class Char extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        let node = React.findDOMNode(this.refs.char);
-
-        this.onTouchStartListener = this.onTouchStart.bind(this);
-        node.addEventListener("touchstart", this.onTouchStartListener);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('touchstart', this.onTouchStartListener);
-    }
-
-    onTouchStart() {
-        console.log("Touched", this.props);
-        this.props.onCharDrawed(this.props.index);
-    }
-
     render() {
         return (
-            <div ref="char" className={'char'}>
+            <div ref="char"
+                 data-x={this.props.x}
+                 data-y={this.props.y}
+                 className={'char'}>
                 {this.props.children}
             </div>
         )

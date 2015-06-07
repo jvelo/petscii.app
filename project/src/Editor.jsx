@@ -10,11 +10,15 @@ class Editor extends React.Component {
         super(props);
 
         let nbsp = String.fromCharCode(160),
-            emptyDrawing = Array.apply(null, {length: 128}).map(entry => nbsp);
+            emptyMatrix = Array.apply(null, {length: 10}).map(
+                row => {
+                    return Array.apply(null, {length: 20}).map(entry => nbsp)
+                }
+        );
 
         this.state = {
             activeChar: undefined,
-            drawing: emptyDrawing
+            drawing: emptyMatrix
         };
     }
 
@@ -24,12 +28,14 @@ class Editor extends React.Component {
         });
     }
 
-    onCharDrawn(position) {
+    onCharDrawn(x, y) {
         if (!!this.state.activeChar) {
-            let drawing = this.state.drawing.slice();
-            drawing[position] = this.state.activeChar;
+            let newMatrix = this.state.drawing.slice();
+            let newRow = newMatrix[y].slice();
+            newRow[x] = this.state.activeChar;
+            newMatrix[y] = newRow;
             this.setState({
-                drawing: drawing
+                drawing: newMatrix
             });
         }
     }

@@ -25,6 +25,12 @@ class Charset extends React.Component {
         node.addEventListener('touchend', this.onTouchEndListener);
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('touchstart', this.onTouchStartListener);
+        window.removeEventListener('touchmove', this.onTouchMoveListener);
+        window.removeEventListener('touchend', this.onTouchEndListener);
+    }
+
     onTouchEnd(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -57,7 +63,7 @@ class Charset extends React.Component {
     }
 
     chars() {
-        return "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("");
+        return "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\u2665\u2660\u2666\u2022".split("");
     }
 
     render() {
