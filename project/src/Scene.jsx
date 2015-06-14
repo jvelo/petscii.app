@@ -26,8 +26,11 @@ class Scene extends React.Component {
     }
 
     onDrawingChar(event) {
+        event.preventDefault();
+        console.log(event.changedTouches.length, event.changedTouches[0].clientX, event.changedTouches[0].clientY);
+
         let [x, y] = this.getPositionForTouch(event);
-        
+
         if (!!x && !!y) {
             this.props.onCharDrawed(x, y);
         }

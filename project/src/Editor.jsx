@@ -10,9 +10,9 @@ class Editor extends React.Component {
         super(props);
 
         let nbsp = String.fromCharCode(160),
-            emptyMatrix = Array.apply(null, {length: 10}).map(
+            emptyMatrix = Array.apply(null, {length: 30}).map(
                 row => {
-                    return Array.apply(null, {length: 20}).map(entry => nbsp)
+                    return Array.apply(null, {length: 30}).map(entry => nbsp)
                 }
         );
 
@@ -30,12 +30,15 @@ class Editor extends React.Component {
 
     onCharDrawn(x, y) {
         if (!!this.state.activeChar) {
-            let newMatrix = this.state.drawing.slice();
-            let newRow = newMatrix[y].slice();
-            newRow[x] = this.state.activeChar;
-            newMatrix[y] = newRow;
+            let updateOperation = {};
+            let char = this.state.activeChar;
+            updateOperation[y] = {$apply: function(row) {
+                row[x] = char;
+                return row
+            }};
+            let newState = React.addons.update(this.state.drawing, updateOperation);
             this.setState({
-                drawing: newMatrix
+                drawing: newState
             });
         }
     }
